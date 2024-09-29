@@ -93,6 +93,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -227,6 +230,7 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
@@ -522,6 +526,13 @@ require('lazy').setup({
           }
         end,
       },
+      {
+        'nvim-tree/nvim-tree.lua',
+      },
+      {
+        'mrcjkb/haskell-tools.nvim',
+        version = '^4',
+      },
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -665,6 +676,20 @@ require('lazy').setup({
       --    :Mason
       --
       --  You can press `g?` for help in this menu.
+      require('nvim-tree').setup {
+        sort = {
+          sorter = 'case_sensitive',
+        },
+        view = {
+          width = 30,
+        },
+        renderer = {
+          group_empty = true,
+        },
+        filters = {
+          dotfiles = true,
+        },
+      }
       require('mason').setup()
       require('mason-lspconfig').setup {
         ensure_installed = {
