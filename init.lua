@@ -96,6 +96,8 @@ vim.g.have_nerd_font = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.nvim_tree_respect_buf_cwd = 1
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -677,14 +679,59 @@ require('lazy').setup({
       --
       --  You can press `g?` for help in this menu.
       require('nvim-tree').setup {
+        sync_root_with_cwd = true,
+        disable_netrw = true,
+        hijack_cursor = true,
+        update_focused_file = {
+          enable = true,
+          update_cwd = true,
+        },
         sort = {
           sorter = 'case_sensitive',
         },
         view = {
           width = 30,
+          side = 'left',
         },
         renderer = {
-          group_empty = true,
+          root_folder_label = false,
+          highlight_git = true,
+          indent_markers = { enable = true },
+          icons = {
+            glyphs = {
+              default = '',
+              symlink = '',
+              folder = {
+                arrow_open = '',
+                arrow_closed = '',
+                default = '',
+                open = '',
+                empty = '',
+                empty_open = '',
+                symlink = '',
+                symlink_open = '',
+              },
+              git = {
+                unstaged = '',
+                staged = 'S',
+                unmerged = '',
+                renamed = '➜',
+                untracked = 'U',
+                deleted = '',
+                ignored = '◌',
+              },
+            },
+          },
+        },
+        diagnostics = {
+          enable = true,
+          show_on_dirs = true,
+          icons = {
+            hint = '',
+            info = '',
+            warning = '',
+            error = '',
+          },
         },
         filters = {
           dotfiles = true,
@@ -901,16 +948,19 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+    'catppuccin/nvim',
+    config = function()
+      require('catppuccin').setup {
+        fidget = true,
+        gitsigns = true,
+        mason = true,
+        nvimtree = true,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = true,
+      }
 
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      vim.cmd 'colorscheme catppuccin-mocha'
     end,
   },
 
