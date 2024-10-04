@@ -107,6 +107,8 @@ return {
           end
 
           map('<leader>d', vim.diagnostic.open_float, 'Open [D]iagnostic float')
+          map('<leader>dn', vim.diagnostic.goto_next, 'Open [D]iagnostic [N]ext')
+          map('<leader>dn', vim.diagnostic.goto_prev, 'Open [D]iagnostic [P]rev')
 
           map('<leader>f', function()
             vim.lsp.buf.format { timeout_ms = 10000 }
