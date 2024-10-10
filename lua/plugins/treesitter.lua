@@ -33,6 +33,8 @@ return {
         'vimdoc',
         'html',
         'markdown',
+        'haskell',
+        'ruby',
       },
       sync_install = false,
       auto_install = true,

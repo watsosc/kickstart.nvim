@@ -272,6 +272,9 @@ return {
       }
       require('mason').setup()
       require('mason-lspconfig').setup {
+        hls = function()
+          return true
+        end,
         ensure_installed = {
           'lua_ls',
           'graphql',
