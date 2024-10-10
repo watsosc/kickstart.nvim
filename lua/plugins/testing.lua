@@ -1,5 +1,5 @@
 return {
-  'mattkubej/jest.nvim',
+  { 'mattkubej/jest.nvim' },
   {
     'nvim-neotest/neotest',
     dependencies = {
@@ -7,6 +7,7 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'antoinemadec/FixCursorHold.nvim',
       'haydenmeade/neotest-jest',
+      'mrcjkb/neotest-haskell',
     },
     opts = function()
       return {
@@ -14,6 +15,7 @@ return {
           require 'neotest-jest' {
             jestCommand = 'npm test -- --watch',
           },
+          require 'neotest-haskell',
         },
       }
     end,
