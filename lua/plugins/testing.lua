@@ -1,8 +1,8 @@
 return {
-  { 'mattkubej/jest.nvim' },
   {
     'nvim-neotest/neotest',
     dependencies = {
+      'nvim-neotest/nvim-nio',
       'nvim-lua/plenary.nvim',
       'nvim-treesitter/nvim-treesitter',
       'antoinemadec/FixCursorHold.nvim',
@@ -15,7 +15,10 @@ return {
           require 'neotest-jest' {
             jestCommand = 'npm test -- --watch',
           },
-          require 'neotest-haskell',
+          require 'neotest-haskell' {
+            build_tools = { 'stack', 'cabal' },
+            frameworks = { 'tasty', 'hspec', 'sydtest' },
+          },
         },
       }
     end,
