@@ -60,12 +60,12 @@ return {
           enable = true,
           lookahead = true,
           keymaps = {
-            ['<leader>aa'] = '@parameter.outer',
-            ['<leader>ia'] = '@parameter.inner',
-            ['<leader>af'] = '@function.outer',
-            ['<leader>if'] = '@function.inner',
-            ['<leader>ac'] = '@class.outer',
-            ['<leader>ic'] = '@class.inner',
+            ['aa'] = '@parameter.outer',
+            ['ia'] = '@parameter.inner',
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+            ['ac'] = '@class.outer',
+            ['ic'] = '@class.inner',
           },
         },
         move = {
@@ -74,18 +74,22 @@ return {
           goto_next_start = {
             [']v'] = '@function.outer',
             [']c'] = '@class.outer',
+            [']p'] = '@paramter.outer',
           },
           goto_next_end = {
             [']V'] = '@function.outer',
             [']C'] = '@class.outer',
+            [']P'] = '@paramter.outer',
           },
           goto_previous_start = {
             ['[v'] = '@function.outer',
             ['[c'] = '@class.outer',
+            ['[p'] = '@parameter.outer',
           },
           goto_previous_end = {
             ['[V'] = '@function.outer',
             ['[C'] = '@class.outer',
+            ['[P'] = '@parameter.outer',
           },
         },
         swap = {
