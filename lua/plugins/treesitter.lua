@@ -74,12 +74,12 @@ return {
           goto_next_start = {
             [']v'] = '@function.outer',
             [']c'] = '@class.outer',
-            [']p'] = '@paramter.outer',
+            [']p'] = '@parameter.outer',
           },
           goto_next_end = {
             [']V'] = '@function.outer',
             [']C'] = '@class.outer',
-            [']P'] = '@paramter.outer',
+            [']P'] = '@parameter.outer',
           },
           goto_previous_start = {
             ['[v'] = '@function.outer',

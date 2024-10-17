@@ -54,9 +54,6 @@ return {
         end,
       },
       {
-        'nvim-tree/nvim-tree.lua',
-      },
-      {
         'mrcjkb/haskell-tools.nvim',
         version = '^4',
       },
@@ -205,71 +202,6 @@ return {
         }
       end
 
-      -- Ensure the servers and tools above are installed
-      --  To check the current status of installed tools and/or manually install
-      --  other tools, you can run
-      --    :Mason
-      --
-      --  You can press `g?` for help in this menu.
-      require('nvim-tree').setup {
-        sync_root_with_cwd = true,
-        disable_netrw = true,
-        hijack_cursor = true,
-        update_focused_file = {
-          enable = true,
-          update_cwd = true,
-        },
-        sort = {
-          sorter = 'case_sensitive',
-        },
-        view = {
-          width = 30,
-          side = 'left',
-        },
-        renderer = {
-          root_folder_label = false,
-          highlight_git = true,
-          indent_markers = { enable = true },
-          icons = {
-            glyphs = {
-              default = '',
-              symlink = '',
-              folder = {
-                arrow_open = '',
-                arrow_closed = '',
-                default = '',
-                open = '',
-                empty = '',
-                empty_open = '',
-                symlink = '',
-                symlink_open = '',
-              },
-              git = {
-                unstaged = '',
-                staged = 'S',
-                unmerged = '',
-                renamed = '➜',
-                untracked = 'U',
-                deleted = '',
-                ignored = '◌',
-              },
-            },
-          },
-        },
-        diagnostics = {
-          enable = true,
-          show_on_dirs = true,
-          icons = {
-            hint = '',
-            info = '',
-            warning = '',
-            error = '',
-          },
-        },
-        filters = {
-          dotfiles = true,
-        },
-      }
       require('mason').setup()
       require('mason-lspconfig').setup {
         hls = function()

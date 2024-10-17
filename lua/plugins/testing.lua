@@ -24,7 +24,7 @@ return {
     end,
     keys = {
       { '<leader>tw', "<cmd>lua require('neotest').run.run()<cr>" },
-      { '<leader>tf', '<cmd>lua require(\'neotest\').run.run(vim.fn.expand("%"))<cr>' },
+      { '<leader>tf', "<cmd>lua require('neotest').run.run(vim.fn.expand(' % '))<cr>" },
       { '<leader>ts', "<cmd>lua require('neotest').run.stop()<cr>" },
       { '<leader>ta', "<cmd>lua require('neotest').run.attach()<cr>" },
       { '<leader>to', "<cmd>lua require('neotest').output_panel.toggle({ last_run = true })<cr>" },
