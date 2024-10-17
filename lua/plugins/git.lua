@@ -26,16 +26,15 @@ return {
   },
   {
     'tpope/vim-fugitive',
-    keys = {
-      { '<leader>gs', vim.cmd.Git, desc = '[G]it [S]tatus' },
-      {
-        '<leader>gp',
-        function()
-          vim.cmd.Git 'push'
-        end,
-        desc = '[G]it [P]ush',
-      },
-    },
+    config = function()
+      local keymap = vim.keymap
+
+      keymap.set('n', '<leader>gt', ':G<CR>', { desc = '[G]it S[t]atus' })
+      keymap.set('n', '<leader>gs', ':Gwrite<CR>', { desc = '[G]it [S]tage' })
+      keymap.set('n', '<leader>gc', ':G commit<CR>', { desc = '[G]it [C]ommit' })
+      keymap.set('n', '<leader>gp', ':G push<CR>', { desc = '[G]it [P]ush' })
+      keymap.set('n', '<leader>ga', ':G add --all', { desc = '[G]it Add [A]ll' })
+    end,
   },
   {
     'kdheepak/lazygit.nvim',

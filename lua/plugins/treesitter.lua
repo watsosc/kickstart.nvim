@@ -60,42 +60,42 @@ return {
           enable = true,
           lookahead = true,
           keymaps = {
-            ['aa'] = '@parameter.outer',
-            ['ia'] = '@parameter.inner',
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-            ['ac'] = '@class.outer',
-            ['ic'] = '@class.inner',
+            ['<leader>aa'] = '@parameter.outer',
+            ['<leader>ia'] = '@parameter.inner',
+            ['<leader>af'] = '@function.outer',
+            ['<leader>if'] = '@function.inner',
+            ['<leader>ac'] = '@class.outer',
+            ['<leader>ic'] = '@class.inner',
           },
         },
-      },
-      move = {
-        enable = true,
-        set_jumps = true,
-        goto_next_start = {
-          [']v'] = '@function.outer',
-          [']c'] = '@class.outer',
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_next_start = {
+            [']v'] = '@function.outer',
+            [']c'] = '@class.outer',
+          },
+          goto_next_end = {
+            [']V'] = '@function.outer',
+            [']C'] = '@class.outer',
+          },
+          goto_previous_start = {
+            ['[v'] = '@function.outer',
+            ['[c'] = '@class.outer',
+          },
+          goto_previous_end = {
+            ['[V'] = '@function.outer',
+            ['[C'] = '@class.outer',
+          },
         },
-        goto_next_end = {
-          [']V'] = '@function.outer',
-          [']C'] = '@class.outer',
-        },
-        goto_previous_start = {
-          ['[v'] = '@function.outer',
-          ['[c'] = '@class.outer',
-        },
-        goto_previous_end = {
-          ['[V'] = '@function.outer',
-          ['[C'] = '@class.outer',
-        },
-      },
-      swap = {
-        enable = true,
-        swap_next = {
-          ['<leader>a'] = '@parameter.inner',
-        },
-        swap_previous = {
-          ['<leader>A'] = '@parameter.inner',
+        swap = {
+          enable = true,
+          swap_next = {
+            ['<leader>aw'] = '@parameter.inner',
+          },
+          swap_previous = {
+            ['<leader>aW'] = '@parameter.inner',
+          },
         },
       },
     },

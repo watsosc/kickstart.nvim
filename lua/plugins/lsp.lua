@@ -106,9 +106,9 @@ return {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          map('<leader>d', vim.diagnostic.open_float, 'Open [D]iagnostic float')
-          map('<leader>dn', vim.diagnostic.goto_next, 'Open [D]iagnostic [N]ext')
-          map('<leader>dn', vim.diagnostic.goto_prev, 'Open [D]iagnostic [P]rev')
+          map('<leader>e', vim.diagnostic.open_float, 'Open [D]iagnostic float')
+          map('<leader>en', vim.diagnostic.goto_next, 'Open [D]iagnostic [N]ext')
+          map('<leader>ep', vim.diagnostic.goto_prev, 'Open [D]iagnostic [P]rev')
 
           map('<leader>f', function()
             vim.lsp.buf.format { timeout_ms = 10000 }
